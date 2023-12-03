@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import Footer from "../../Page/Shared/Footer/Footer";
 import BlogCard from "../BlogSection/BlogCard";
 import NewsletterSection from "../Newsletter/newsletter";
+import FeaturedArticlesSection from "./FeaturedArticle/FeaturedArticlesSection";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <Banner></Banner>
             <BlogCard></BlogCard>
             <NewsletterSection></NewsletterSection>
+            <FeaturedArticlesSection></FeaturedArticlesSection>
             <Footer></Footer>
             
             
