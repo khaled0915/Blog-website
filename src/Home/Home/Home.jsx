@@ -5,6 +5,7 @@ import Footer from "../../Page/Shared/Footer/Footer";
 import BlogCard from "../BlogSection/BlogCard";
 import NewsletterSection from "../Newsletter/newsletter";
 import FeaturedArticlesSection from "./FeaturedArticle/FeaturedArticlesSection";
+import About from "../About/About";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             <BlogCard></BlogCard>
             <NewsletterSection></NewsletterSection>
             <FeaturedArticlesSection></FeaturedArticlesSection>
+            <About></About>
             <Footer></Footer>
             
             
