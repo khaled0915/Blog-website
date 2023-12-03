@@ -7,12 +7,12 @@ const Navbar = () => {
 
     
     <li>
-                <Link className=" bg-emerald-500 " to='/'>
+                <Link className=" hover:bg-orange-400 hover:underline font-bold text-teal-500 " to='/'>
                     Home </Link>
 
             </li>
             <li>
-                <Link className="bg-green-500" to='/addBlog'>
+                <Link className=" hover:bg-yellow-500 hover:underline font-bold text-orange-600" to='/addBlog'>
                 Add Blog
 
 
@@ -22,7 +22,7 @@ const Navbar = () => {
             <li>
 
                 
-                 <Link className="bg-pink-500" to='/allBlog'>
+                 <Link className=" hover:bg-pink-400 hover:underline font-bold text-rose-500 " to='/allBlog'>
 
 
                  All blogs  
@@ -31,7 +31,7 @@ const Navbar = () => {
 
             <li> 
                 
-                <Link className="bg-teal-500" to='/featureBlogs'>
+                <Link className=" hover:bg-sky-700 hover:underline font-bold text-teal-500" to='/featureBlogs'>
 
                 Featured Blogs 
                 
@@ -40,7 +40,7 @@ const Navbar = () => {
             <li> 
 
                 
-                <Link className="bg-teal-500" to='/wishlist'>
+                <Link className=" hover:bg-yellow-400 hover:underline font-bold text-teal-500" to='/wishlist'>
 
                 Wishlist 
                 
@@ -66,7 +66,7 @@ const Navbar = () => {
         {navBar}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">EchoMinds</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -77,12 +77,15 @@ const Navbar = () => {
 
 
   <div>
-  <div className="navbar-end">
-    <a className="btn"> Login </a>
-  </div>
 
+  <Link to='/signUp'>
   <div className="navbar-end">
     <a className="btn"> Sign_Up </a>
+  </div>
+   </Link>
+
+  <div className="navbar-end">
+    <a className="btn"> Sign_In </a>
   </div>
   </div>
 
