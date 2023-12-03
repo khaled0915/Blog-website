@@ -145,7 +145,7 @@ const SignUp = () => {
 
       <p className="mt-5 text-yellow-700 font-bold hover:underline "> already register ? 
 
-      <Link to='/login' className="ml-10 font-bold hover:text-green-500 text-yellow-400"> login </Link>
+      <Link to='/signIn' className="ml-10 font-bold hover:text-green-500 text-yellow-400"> login </Link>
       
        </p>
 

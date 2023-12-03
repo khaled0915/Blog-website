@@ -5,13 +5,33 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
 
 
 const SignIn = () => {
 
-  const {logIn} = useContext(AuthContext);
+  const {logIn , handleGoogleSignIn} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useNavigate();
+
+  const handleGoogleBtn = (auth , googleProvider) =>{
+
+    handleGoogleSignIn(auth , googleProvider)
+    .then(result =>{
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      navigate('/')
+      
+    })
+    .catch(error =>{
+      console.log(error);
+    })
+
+
+
+
+
+  }
 
 
     const handleLogin = event =>{
@@ -109,6 +129,8 @@ const SignIn = () => {
         
          </p>
          <p className="text-center font-bold bg-green-400"> Or Sign In with Google  </p>
+
+         <button onClick={handleGoogleBtn} className="btn  btn-secondary  mt-10   " > <FaGoogle className="text-black mr-5"></FaGoogle> Google </button>
 
         
     </div>
