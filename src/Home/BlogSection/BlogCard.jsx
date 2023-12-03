@@ -26,25 +26,33 @@ const BlogCard = () => {
 
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-teal-400 ">
 
    {
     blogs.map(item => 
 
         <div key={item._id} 
         
-        className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src={item.image} className="max-w-sm rounded-lg shadow-2xl" />
+        className="hero min-h-screen bg-red-400">
+  <div className="hero-content rounded-lg bg-orange-400 flex-col lg:flex-row-reverse">
+    <img src={item.image} className=" rounded-lg w-[300px] h-[300px] shadow-2xl" />
     <div>
-      <h1 className="text-5xl font-bold">{item.title}</h1>
+      <h1 className="text-2xl font-bold"> Blog_Title:  {item.title}</h1>
+
       <p className="mt-5 font-bold bg-sky-500 rounded-full p-4  hover:text-orange-700 "> Category: 
       
      <span className="text-xl underline">  {item.category}  </span>
       
       </p>
+
+
       <p className="py-6">{item.shortDescription}</p>
-      <button className="btn btn-primary">Get Started</button>
+
+
+    <div className="text-center mt-5 mb-4">
+    <button className="btn btn-info font-bold  mr-5 "> Details </button>
+    <button className="btn btn-success font-bold">wishlist</button>
+    </div>
     </div>
   </div>
 </div>
