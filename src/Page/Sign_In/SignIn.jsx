@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 
 const SignIn = () => {
+
+  const {logIn} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useNavigate();
 
 
     const handleLogin = event =>{
@@ -15,15 +24,48 @@ const SignIn = () => {
 
         console.log(email , password);
         
+        if(!password){
+          toast.error('Your password doesnt match ')
+          return;
+        }
+        else if(!email){
+          toast.error('Your Email doesnt match')
+          return;
+        }
+
+        logIn(email , password)
+        .then(result =>{
+          console.log(result.user);
+          navigate(location?.state? location.state : '/')
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Login Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          
+        })
+        .catch(error=>{
+          console.log(error);
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Login failed",
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+        })
 
     }
     return (
         <div>
              <Helmet>
-                <title> EchoMinds | Sign_in </title> 
+                <title> EchoMinds | Log_in </title> 
                 
                 </Helmet>
-            <h3> This is login page </h3>     <div className="hero min-h-screen bg-base-200">
+              <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col md:flex-row-reverse">
     <div className="text-center w-auto lg:text-left">
     <h1 className="text-5xl my-7 underline font-bold">Login now!</h1>
