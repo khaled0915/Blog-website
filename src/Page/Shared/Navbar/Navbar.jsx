@@ -84,9 +84,10 @@ const Navbar = () => {
   </div>
    </Link>
 
-  <div className="navbar-end">
+ <Link to='/signIn'>
+ <div className="navbar-end">
     <a className="btn"> Sign_In </a>
-  </div>
+  </div></Link>
   </div>
 
 
