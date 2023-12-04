@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const BlogCard = () => {
@@ -50,7 +51,11 @@ const BlogCard = () => {
 
 
     <div className="text-center mt-5 mb-4">
-    <button className="btn btn-info font-bold  mr-5 "> Details </button>
+
+<Link to={`/blogDetail/${item._id}`}> 
+    <button className="btn btn-info font-bold  mr-5 "> Details </button> </Link>
+
+
     <button className="btn btn-success font-bold">wishlist</button>
     </div>
     </div>
