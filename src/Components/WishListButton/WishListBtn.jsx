@@ -29,7 +29,7 @@ const WishListBtn = () => {
 
         }
         axiosPublic.post('/wishList' , wishListInfo)
-        .then(res =>{
+        .then(async res =>{
             if(res.data.insertedId){
                 console.log('info added');
                 Swal.fire({

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import WishListBtn from "../../Components/WishListButton/WishListBtn";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useBlog from "../../hooks/useBlog";
@@ -39,7 +40,10 @@ const AllBlogs = () => {
           <p> {item.shortDescription} </p>
           <p className="underline font-bold text-slate-700 "> Category :  {item.category} </p>
           <div className="card-actions mt-5 justify-end">
-            <button className="btn btn-info mr-4 "> Details </button>
+
+
+          <Link to={`/blogDetail/${item._id}`}> 
+    <button className="btn btn-info font-bold  mr-5 "> Details </button> </Link>
 
             {/* <button className="btn btn-primary"> wishlist </button>
              */}

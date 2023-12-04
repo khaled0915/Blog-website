@@ -2,26 +2,29 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import WishList from "../../Page/Wishlist/WishList";
 import WishListBtn from "../../Components/WishListButton/WishListBtn";
+import useBlog from "../../hooks/useBlog";
 
 
 const BlogCard = () => {
 
 
-    const [ blogs , setBlogs ] = useState([])
+    // const [ blogs , setBlogs ] = useState([])
 
-    useEffect(()=>{
-
-
-        fetch('blog.json')
-        .then( res => res.json() )
-        .then(data => setBlogs(data));
+    // useEffect(()=>{
 
 
+    //     fetch('blog.json')
+    //     .then( res => res.json() )
+    //     .then(data => setBlogs(data));
 
 
 
-    } , [])
-    console.log(blogs);
+
+
+    // } , [])
+
+    const [blog] = useBlog();
+    console.log(blog);
     return (
         <div className="mt-10 mb-10">
 
@@ -32,7 +35,7 @@ const BlogCard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-teal-400 ">
 
    {
-    blogs.map(item => 
+    blog.map(item => 
 
         <div key={item._id} 
         

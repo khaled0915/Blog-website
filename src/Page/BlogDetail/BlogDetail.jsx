@@ -5,14 +5,25 @@ import useBlog from "../../hooks/useBlog";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import CommentSection from "../../Components/CommentSection/CommentSectio";
 
 // import useBlog from "../../hooks/useBlog";
 
 
 const BlogDetail = () => {
 
+  const [blog] = useBlog();
+
+  const {user} = useContext(AuthContext);
+
+    const axiosPublic = useAxiosPublic();
+
 
     const handleComment = event =>{
+
+    
 
         event.preventDefault();
 
@@ -21,7 +32,12 @@ const BlogDetail = () => {
         const comment = form.comment.value ;
 
         const commentInfo = {
-            comment : comment 
+          id : blog._id,
+          userName : user.displayName ,
+          userPhoto : user.photoURL
+          ,
+            comment : comment ,
+
         }
 
         console.log(comment);
@@ -48,11 +64,11 @@ const BlogDetail = () => {
 
     // const {user} = useContext(AuthContext);
 
-    const [blog , refetch ] = useBlog();
+    
 
     console.log(blog);
 
-    const axiosPublic = useAxiosPublic();
+   
 
     const {id}= useParams();
     console.log(id);
@@ -119,8 +135,13 @@ const BlogDetail = () => {
 
 
   </div>
+
+
+
+
 </div>
       
+<CommentSection></CommentSection>
 
           
 

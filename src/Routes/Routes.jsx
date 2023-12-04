@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/blogDetail/:id',
-                element : <BlogDetail></BlogDetail>,
+                element : <PrivateRoutes> <BlogDetail></BlogDetail> </PrivateRoutes>,
                 loader : ({params}) => fetch(`https://blog-website-server-beryl.vercel.app/blogs/${params.id}`)
             },
             {
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/wishList',
-                element : <WishList></WishList>
+                element : <PrivateRoutes><WishList></WishList></PrivateRoutes>
             },
             {
                 path : '/feature',
