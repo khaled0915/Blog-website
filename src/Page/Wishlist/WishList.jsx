@@ -1,0 +1,17 @@
+import Footer from "../Shared/Footer/Footer";
+import Navbar from "../Shared/Navbar/Navbar";
+
+
+const WishList = () => {
+    return (
+        <div className="mt-10 mb-20">
+            <Navbar>
+
+            </Navbar>
+            <h3> This is wishlist page  </h3>
+            <Footer></Footer>
+        </div>
+    );
+};
+
+export default WishList;

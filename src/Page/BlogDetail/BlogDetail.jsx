@@ -4,11 +4,41 @@ import Navbar from "../Shared/Navbar/Navbar";
 import useBlog from "../../hooks/useBlog";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 // import useBlog from "../../hooks/useBlog";
 
 
 const BlogDetail = () => {
+
+
+    const handleComment = event =>{
+
+        event.preventDefault();
+
+        const form  = event.target;
+        
+        const comment = form.comment.value ;
+
+        const commentInfo = {
+            comment : comment 
+        }
+
+        console.log(comment);
+        axiosPublic.post('/comment' , commentInfo )
+        .then(res=>{
+            if(res.data.insertedId){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: ' info saved successfully ',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
+        
+    }
 
     
 
@@ -78,7 +108,12 @@ const BlogDetail = () => {
 
 
 
-    <textarea className="textarea textarea-warning" placeholder="comment"></textarea>
+   <form onSubmit={handleComment}>
+   <textarea name='comment' className="textarea textarea-warning" placeholder="comment"></textarea>
+
+
+<input className="btn btn-info mt-10 ml-5" type="submit" name="" id="" />
+   </form>
 
 
 

@@ -1,3 +1,4 @@
+import WishListBtn from "../../Components/WishListButton/WishListBtn";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useBlog from "../../hooks/useBlog";
 import Footer from "../Shared/Footer/Footer";
@@ -39,7 +40,12 @@ const AllBlogs = () => {
           <p className="underline font-bold text-slate-700 "> Category :  {item.category} </p>
           <div className="card-actions mt-5 justify-end">
             <button className="btn btn-info mr-4 "> Details </button>
-            <button className="btn btn-primary"> wishlist </button>
+
+            {/* <button className="btn btn-primary"> wishlist </button>
+             */}
+             
+             <WishListBtn></WishListBtn>
+
           </div>
 
 

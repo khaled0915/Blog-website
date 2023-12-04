@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import WishList from "../../Page/Wishlist/WishList";
+import WishListBtn from "../../Components/WishListButton/WishListBtn";
 
 
 const BlogCard = () => {
@@ -50,13 +52,15 @@ const BlogCard = () => {
       <p className="py-6">{item.shortDescription}</p>
 
 
-    <div className="text-center mt-5 mb-4">
+    <div className="text-center mt-5 mb-4 flex">
 
 <Link to={`/blogDetail/${item._id}`}> 
     <button className="btn btn-info font-bold  mr-5 "> Details </button> </Link>
 
 
-    <button className="btn btn-success font-bold">wishlist</button>
+
+    <WishListBtn></WishListBtn>
+
     </div>
     </div>
   </div>
