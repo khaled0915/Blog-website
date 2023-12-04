@@ -9,7 +9,7 @@ const useBlog = () => {
     const axiosPublic = useAxiosPublic();
 
     const { data : blog = [] , refetch } = useQuery({
-        queryKey : ['blog'] ,
+        queryKey : ['blogs'] ,
         queryFn : async ()=>{
             const res = await axiosPublic.get('/blogs')
             return res.data ;
