@@ -1,13 +1,25 @@
+
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import useBlog from "../../hooks/useBlog";
+
+// import useBlog from "../../hooks/useBlog";
 
 
 const BlogDetail = () => {
 
-    const selectedBlog = useLoaderData();
-    console.log(selectedBlog);
+    const item = useLoaderData();
+    console.log(item);
 
-    const  {image ,title , shortDescription ,category}  = selectedBlog;
+
+    // const {user} = useContext(AuthContext);
+
+    const [blog ] = useBlog();
+
+    console.log(blog);
+
+    
+
 
     // console.log(selectedBlog);
 
@@ -16,9 +28,9 @@ const BlogDetail = () => {
         
         <div>
             <Navbar></Navbar>
-            <h2> This is Blog details </h2>
+            <h2> This is Blog details {item.length} </h2>
 
-            <h3> {selectedBlog.length} </h3>
+          
 
 
         </div>

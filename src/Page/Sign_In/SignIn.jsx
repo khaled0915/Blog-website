@@ -6,9 +6,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import { FaGoogle } from "react-icons/fa";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 const SignIn = () => {
+
+  const axiosPublic = useAxiosPublic();
 
   const {logIn , handleGoogleSignIn} = useContext(AuthContext);
   const navigate = useNavigate();
@@ -20,7 +23,18 @@ const SignIn = () => {
     .then(result =>{
       const loggedUser = result.user;
       console.log(loggedUser);
-      navigate('/')
+      const userInfo = {
+        email : result.user?.email ,
+        name : result.user?.displayName 
+      }
+      axiosPublic.post('/users' , userInfo)
+      .then(res=>{
+        console.log(res.data);
+
+        navigate('/')
+      })
+      
+      
       
     })
     .catch(error =>{
