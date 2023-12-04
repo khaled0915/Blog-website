@@ -5,6 +5,8 @@ import Home from "../Home/Home/Home";
 import SignUp from "../Page/Sign-Up/SignUp";
 import SignIn from "../Page/Sign_In/SignIn";
 import BlogDetail from "../Page/BlogDetail/BlogDetail";
+import AddBlog from "../Page/AddBlog/AddBlog";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 export const router = createBrowserRouter([
@@ -29,6 +31,10 @@ export const router = createBrowserRouter([
                 path : '/blogDetail/:id',
                 element : <BlogDetail></BlogDetail>,
                 loader : ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+            },
+            {
+                path :'/addBlog',
+                element : <PrivateRoutes>  <AddBlog></AddBlog> </PrivateRoutes>
             }
         
         
