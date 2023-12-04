@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
             {
                 path : '/blogDetail/:id',
                 element : <BlogDetail></BlogDetail>,
-                loader : ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+                loader : ({params}) => fetch(`https://blog-website-server-beryl.vercel.app/blogs/${params.id}`)
             },
             {
                 path :'/addBlog',
