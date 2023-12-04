@@ -20,7 +20,7 @@ const Banner = () => {
 
 </p>
      <Link to='/signUp'> 
-     <button className="btn btn-accent font-bold mt-5 ">Start Exploring
+     <button className="btn btn-accent font-bold mt-5 "> get Started 
 </button></Link>
     </div>
   </div>
