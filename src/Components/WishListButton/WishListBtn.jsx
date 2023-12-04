@@ -12,44 +12,49 @@ const WishListBtn = () => {
     const {user} = useContext(AuthContext);
 
     const [blog ] = useBlog();
+
+    console.log(blog);
+
+
     
 
 
 
-    const handleWishListBtn = () =>{
-        if(user && user.email)
-        {
+//     const handleWishListBtn = () =>{
+//         if(user && user.email)
+//         {
 
-        const wishListInfo  = {
-        title : blog.title ,
-        image : blog.image ,
-        category : blog.category,
-        longDescription : blog.longDescription ,
-        shortDescription : blog.shortDescription
+//         const wishListInfo  = {
+//         title : blog.title ,
+//         image : blog.image ,
+//         category : blog.category,
+//         longDescription : blog.longDescription ,
+//         shortDescription : blog.shortDescription
 
-        }
-        axiosPublic.post('/wishList' , wishListInfo)
-        .then(async res =>{
-            if(res.data.insertedId){
-                console.log('info added');
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: ' info saved successfully ',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
+//         }
+//         axiosPublic.post('/wishList' , wishListInfo)
+//         .then(async res =>{
+//             if(res.data.insertedId){
+//                 console.log('');
+//                 Swal.fire({
+//                     position: "top-end",
+//                     icon: "success",
+//                     title: ' the blog has been added to your wishlist ',
+//                     showConfirmButton: false,
+//                     timer: 1500
+//                   });
 
-            }
-        })
-    }
-}
+//             }
+//         })
+//     }
+// }
 
 
 
 
     return (
         <div>
+         
            
            <button onClick={handleWishListBtn} className="btn btn-success font-bold"> WishList </button>  
         </div>

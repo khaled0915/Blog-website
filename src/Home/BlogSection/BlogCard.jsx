@@ -1,11 +1,54 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import WishList from "../../Page/Wishlist/WishList";
 import WishListBtn from "../../Components/WishListButton/WishListBtn";
 import useBlog from "../../hooks/useBlog";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const BlogCard = () => {
+
+    const [blog] = useBlog();
+
+    const { _id , image , title ,category, shortDescription , longDescription } = blog;
+
+
+    const axiosPublic = useAxiosPublic();
+
+    const{user} = useContext(AuthContext);
+
+    const handleWishListBtn = () =>{
+        if(user && user.email)
+        {
+
+        const wishListInfo  = {
+            email : user.email ,
+            id :_id,
+        title : blog.title ,
+        image : blog.image ,
+        category : blog.category,
+        longDescription : blog.longDescription ,
+        shortDescription : blog.shortDescription
+
+        }
+        axiosPublic.post('/wishList' , wishListInfo)
+        .then( res =>{
+            if(res.data.insertedId){
+                console.log('');
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: ' the blog has been added to your wishlist ',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+
+            }
+        })
+    }
+}
 
 
     // const [ blogs , setBlogs ] = useState([])
@@ -23,7 +66,7 @@ const BlogCard = () => {
 
     // } , [])
 
-    const [blog] = useBlog();
+ 
     console.log(blog);
     return (
         <div className="mt-10 mb-10">
@@ -62,7 +105,11 @@ const BlogCard = () => {
 
 
 
-    <WishListBtn></WishListBtn>
+    <div>
+         
+           
+           <button onClick={handleWishListBtn} className="btn btn-success font-bold"> WishList </button>  
+        </div>
 
     </div>
     </div>
