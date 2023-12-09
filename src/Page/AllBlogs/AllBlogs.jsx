@@ -4,6 +4,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useBlog from "../../hooks/useBlog";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
+import FilteredBlog from "./FilteredBlog";
 
 
 const AllBlogs = () => {
@@ -28,6 +29,9 @@ const AllBlogs = () => {
         <div className="mb-10">
             <Navbar></Navbar>
             <h1 className="text-3xl underline font-bold  text-center mt-10 mb-5 text-sky-800 "> This is all blog page </h1>
+
+
+            <FilteredBlog></FilteredBlog>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
 {

@@ -13,3 +13,11 @@ Live Link : https://ubiquitous-gingersnap-e70ce9.netlify.app
 
 - **Search Functionality:** Quickly find relevant content with our powerful search functionality. Users can search for specific keywords or topics, making it easy to discover and explore the diverse range of blog posts.
 
+## Technologies Used
+
+- **Frontend:** HTML5, CSS3, JavaScript ,React , Tailwind, DaisyUI
+- **Backend:** [firebase,Express,Node]
+- **Database:** [Mongodb]
+- **Hosting:** [Netlify]
+- **Version Control:** Git, GitHub
+

@@ -12,43 +12,46 @@ const BlogCard = () => {
 
     const [blog] = useBlog();
 
-    const { _id , image , title ,category, shortDescription , longDescription } = blog;
+   
 
 
-    const axiosPublic = useAxiosPublic();
+    // const axiosPublic = useAxiosPublic();
 
-    const{user} = useContext(AuthContext);
+    // const{user} = useContext(AuthContext);
 
-    const handleWishListBtn = () =>{
-        if(user && user.email)
-        {
+//     const handleWishListBtn = () =>{
+//         if(user && user.email)
+        
+//         {
+//             const { _id , image , title ,category, shortDescription , longDescription } = blog;
 
-        const wishListInfo  = {
-            email : user.email ,
-            id :_id,
-        title : blog.title ,
-        image : blog.image ,
-        category : blog.category,
-        longDescription : blog.longDescription ,
-        shortDescription : blog.shortDescription
+//         const wishListInfo  = {
+//             email : user.email ,
+//             id :_id,
+//         BlogTitle : title ,
+//         BlogImage : image ,
+//         BlogCategory : category,
+//         BlogLongDescription : longDescription ,
+//         BlogShortDescription : shortDescription
 
-        }
-        axiosPublic.post('/wishList' , wishListInfo)
-        .then( res =>{
-            if(res.data.insertedId){
-                console.log('');
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: ' the blog has been added to your wishlist ',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
+//         }
+//         axiosPublic.post('/wishList' , wishListInfo)
+//         .then( res =>{
+//             if(res.data.insertedId){
+//                 console.log('');
+//                 Swal.fire({
+//                     position: "top-end",
+//                     icon: "success",
+//                     title: ' the blog has been added to your wishlist ',
+//                     showConfirmButton: false,
+//                     timer: 1500
+//                   });
 
-            }
-        })
-    }
-}
+//             }
+//         })
+//         console.log(wishListInfo);
+//     }
+// }
 
 
     // const [ blogs , setBlogs ] = useState([])
@@ -104,12 +107,12 @@ const BlogCard = () => {
     <button className="btn btn-info font-bold  mr-5 "> Details </button> </Link>
 
 
-
-    <div>
+<WishListBtn></WishListBtn>
+    {/* <div>
          
            
            <button onClick={handleWishListBtn} className="btn btn-success font-bold"> WishList </button>  
-        </div>
+        </div> */}
 
     </div>
     </div>
