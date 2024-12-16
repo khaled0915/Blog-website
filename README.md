@@ -1,6 +1,6 @@
 # EchoMinds website
 
-Live Link : https://ubiquitous-gingersnap-e70ce9.netlify.app
+Live Link : https://echomind-blog-website.netlify.app/
 
 ## features : 
  **User-friendly Interface:** Our blog website offers an intuitive and easy-to-navigate interface, ensuring a seamless user experience for both readers and authors.
